@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Post Details</ion-title>
+    <ion-buttons collapse="true" slot="end">
+      <ion-back-button defaultHref="/posts"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="post">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{post.title}} </ion-card-title>
+      <ion-card-subtitle
+        ><ion-icon name="create-outline"></ion-icon>
+        {{post.user.name}}</ion-card-subtitle
+      >
+    </ion-card-header>
+    <ion-card-content>{{post.body}}</ion-card-content>
+  </ion-card>
+
+  <h1 class="container">Comments</h1>
+  <app-post-comment
+    *ngFor="let comment of comments"
+    [comment]="comment"
+  ></app-post-comment>
+  <ion-button fill="clear" *ngIf="!commentComplete" (click)="loadMoreComments()"
+    >Load more comments</ion-button
+  >
+</ion-content>

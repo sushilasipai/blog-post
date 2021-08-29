@@ -1,6 +1,12 @@
 {
-	"appId": "io.ionic.starter",
+	"appId": "com.blogpost.starter",
 	"appName": "blog-post",
 	"webDir": "www",
-	"bundledWebRuntime": false
+	"bundledWebRuntime": false,
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 3000,
+			"launchAutoHide": true
+		}
+	}
 }
